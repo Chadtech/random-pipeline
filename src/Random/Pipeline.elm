@@ -3,7 +3,7 @@ module Random.Pipeline
         ( always
         , finish
         , from
-        , value
+        , with
         )
 
 {-|
