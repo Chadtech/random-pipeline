@@ -47,7 +47,7 @@ init seed =
 
 type alias Model =
     { pos : Position
-    , enemeis : List Enemy
+    , enemies : List Enemy
     , uuid : Uuid
     , name : String
     , seed : Seed
