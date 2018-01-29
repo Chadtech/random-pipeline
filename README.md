@@ -21,6 +21,8 @@ init =
 
 
 -- Random.Pipeline
+import Random.Pipeline exposing (from, with)
+
 init : Seed -> ( Model, Seed )
 init seed =
     Model
@@ -34,6 +36,8 @@ init seed =
 A little bit cleaner right? And what if we wanted to keep the seed in our `Model` too? Just use `Random.Pipeline.finish`
 
 ```elm
+import Random.Pipeline exposing (from, with, finish)
+
 init : Seed -> Model
 init seed =
     Model
@@ -57,15 +61,17 @@ type alias Model =
 It also has `always` that can hardcode values into your random generation.
 
 ```elm
+import Random.Pipeline exposing (from, with, finish, always)
+
 update : Msg -> Model -> Model
 update msg model =
     case msg of
         Restart ->
             Model
-                |> from model.seed
-                |> with positionGenerator
-                |> with enemiesGenerator
-                |> always model.uuid
-                |> always model.name
-                |> finish
+                |> Random.from model.seed
+                |> Random.with positionGenerator
+                |> Random.with enemiesGenerator
+                |> Random.always model.uuid
+                |> Random.always model.name
+                |> Random.finish
 ```
