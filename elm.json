@@ -3,7 +3,7 @@
     "name": "Chadtech/random-pipeline",
     "summary": "Making random values a little bit easier",
     "license": "BSD-3-Clause",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "exposed-modules": [
         "Random.Pipeline"
     ],
